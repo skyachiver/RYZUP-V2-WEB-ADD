@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap - Ryzup Marketing</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: #FAF7F2;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #F6C90E 0%, #FFD700 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .main-title {
+            font-size: 3.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1.2rem;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: #F6C90E;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            background: white;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .sitemap-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #F6C90E;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .sitemap-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #F6C90E;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-icon {
+            width: 24px;
+            height: 24px;
+            stroke: #F6C90E;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .sitemap-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sitemap-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .sitemap-links a {
+            color: #555;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0;
+        }
+
+        .sitemap-links a:hover {
+            color: #F6C90E;
+            padding-left: 1rem;
+        }
+
+        .page-description {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 0.3rem;
+            font-style: italic;
+        }
+
+        /* Specialized Section Colors */
+        .main-pages {
+            border-left-color: #F6C90E;
+        }
+
+        .main-pages .section-title {
+            color: #F6C90E;
+        }
+
+        .main-pages .section-icon {
+            stroke: #F6C90E;
+        }
+
+        .service-pages {
+            border-left-color: #F6C90E;
+        }
+
+        .service-pages .section-title {
+            color: #F6C90E;
+        }
+
+        .service-pages .section-icon {
+            stroke: #F6C90E;
+        }
+
+        .legal-pages {
+            border-left-color: #F6C90E;
+        }
+
+        .legal-pages .section-title {
+            color: #F6C90E;
+        }
+
+        .legal-pages .section-icon {
+            stroke: #F6C90E;
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            color: #F6C90E;
+            font-weight: 600;
+        }
+
+        .external-link {
+            opacity: 0.8;
+        }
+
+        .external-link::after {
+            content: " ↗";
+            font-size: 0.8rem;
+            color: #F6C90E;
+        }
+
+        .last-updated {
+            background: linear-gradient(135deg, #F6C90E 0%, #FFD700 100%);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.8rem;
+                letter-spacing: 2px;
+            }
+
+            .header {
+                padding: 3rem 1.5rem;
+            }
+
+            .container {
+                margin: 1rem;
+                padding: 2rem 1.5rem;
+                border-radius: 20px;
+            }
+
+            .sitemap-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.8rem;
+            }
+
+            .nav-btn {
+                width: 240px;
+                text-align: center;
+                padding: 1rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .sitemap-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .intro-text {
+                font-size: 1.1rem;
+                padding: 0 0.5rem;
+            }
+
+            .sitemap-links a {
+                padding: 0.6rem 0;
+            }
+
+            .page-description {
+                margin-left: 1.5rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2.2rem;
+                letter-spacing: 1px;
+            }
+
+            .header {
+                padding: 2.5rem 1rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .container {
+                padding: 1.5rem 1rem;
+                margin: 0.5rem;
+            }
+
+            .nav-btn {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.9rem;
+                width: 200px;
+            }
+
+            .sitemap-section {
+                padding: 1.5rem 1rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+                gap: 0.6rem;
+            }
+
+            .section-icon {
+                width: 24px;
+                height: 24px;
+            }
+
+            .intro-text {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .last-updated {
+                padding: 1.2rem 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            .sitemap-links a {
+                gap: 0.6rem;
+                padding: 0.5rem 0;
+            }
+
+            .page-description {
+                margin-left: 1.2rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .main-title {
+                font-size: 1.8rem;
+            }
+
+            .header {
+                padding: 2rem 0.8rem;
+            }
+
+            .container {
+                margin: 0.3rem;
+                padding: 1.2rem 0.8rem;
+            }
+
+            .nav-btn {
+                width: 180px;
+                padding: 0.7rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .sitemap-section {
+                padding: 1.2rem 0.8rem;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="main-title">Sitemap</h1>
+        <p class="subtitle">Navigate Our Complete Website</p>
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-btn">← Back to Home</a>
+            <a href="index.html#services-cards" class="nav-btn">Our Services</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="last-updated">
+            <strong>Last Updated:</strong> September 1, 2025
+        </div>
+
+        <p class="intro-text">
+            Welcome to <span class="highlight">Ryzup Marketing's</span> complete sitemap. 
+            Find all our pages, services, and resources organized below for easy navigation.
+        </p>
+
+        <div class="sitemap-grid">
+            <!-- Main Website Pages -->
+            <div class="sitemap-section main-pages">
+                <h2 class="section-title">
+                    <svg class="section-icon" viewBox="0 0 24 24" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                    </svg>
+                    Main Pages
+                </h2>
+                <ul class="sitemap-links">
+                    <li>
+                        <a href="index.html">
+                            → Home Page
+                        </a>
+                        <div class="page-description">Main landing page with hero section, about us, and contact</div>
+                    </li>
+                    <li>
+                        <a href="index.html#services-cards">
+                            → Services Overview
+                        </a>
+                        <div class="page-description">Complete overview of all our marketing services</div>
+                    </li>
+                    <li>
+                        <a href="index.html#about">
+                            → About Us
+                        </a>
+                        <div class="page-description">Learn about Ryzup Marketing and our mission</div>
+                    </li>
+                    <li>
+                        <a href="index.html#contact">
+                            → Contact Us
+                        </a>
+                        <div class="page-description">Get in touch with our team in Abu Dhabi</div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Service Portfolio Pages -->
+            <div class="sitemap-section service-pages">
+                <h2 class="section-title">
+                    <svg class="section-icon" viewBox="0 0 24 24" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                    Service Portfolios
+                </h2>
+                <ul class="sitemap-links">
+                    <li>
+                        <a href="design-branding.html">
+                            → Design & Branding
+                        </a>
+                        <div class="page-description">Logo design, branding, and visual identity services</div>
+                    </li>
+                    <li>
+                        <a href="photography.html">
+                            → Photography
+                        </a>
+                        <div class="page-description">Professional photography for businesses and events</div>
+                    </li>
+                    <li>
+                        <a href="videography.html">
+                            → Videography
+                        </a>
+                        <div class="page-description">Corporate videos, commercials, and promotional content</div>
+                    </li>
+                    <li>
+                        <a href="social-media.html">
+                            → Social Media Management
+                        </a>
+                        <div class="page-description">Social media strategy, content creation, and management</div>
+                    </li>
+                    <li>
+                        <a href="virtual-tours.html">
+                            → Virtual Tours
+                        </a>
+                        <div class="page-description">360° virtual tours and immersive experiences</div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Website Sections -->
+            <div class="sitemap-section">
+                <h2 class="section-title">
+                    <svg class="section-icon" viewBox="0 0 24 24" stroke-width="2">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>
+                    Key Sections
+                </h2>
+                <ul class="sitemap-links">
+                    <li>
+                        <a href="index.html#hero">
+                            → Hero Section
+                        </a>
+                        <div class="page-description">Main banner with company introduction</div>
+                    </li>
+                    <li>
+                        <a href="index.html#services-cards">
+                            → Services Cards
+                        </a>
+                        <div class="page-description">Quick overview of all our services</div>
+                    </li>
+                    <li>
+                        <a href="index.html#brands">
+                            → Our Clients
+                        </a>
+                        <div class="page-description">Brands and companies we work with</div>
+                    </li>
+                    <li>
+                        <a href="index.html#footer">
+                            → Footer Information
+                        </a>
+                        <div class="page-description">Contact details and company information</div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Legal and Policy Pages -->
+            <div class="sitemap-section legal-pages">
+                <h2 class="section-title">
+                    <svg class="section-icon" viewBox="0 0 24 24" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14,2 14,8 20,8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10,9 9,9 8,9"></polyline>
+                    </svg>
+                    Legal & Policies
+                </h2>
+                <ul class="sitemap-links">
+                    <li>
+                        <a href="terms-and-conditions.html" class="external-link">
+                            → Terms & Conditions
+                        </a>
+                        <div class="page-description">Legal terms for using our services</div>
+                    </li>
+                    <li>
+                        <a href="privacy-policy.html" class="external-link">
+                            → Privacy Policy
+                        </a>
+                        <div class="page-description">How we handle and protect your data</div>
+                    </li>
+                    <li>
+                        <a href="sitemap.html">
+                            → Sitemap
+                        </a>
+                        <div class="page-description">This page - complete site navigation</div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- External Resources -->
+            <div class="sitemap-section">
+                <h2 class="section-title">
+                    <svg class="section-icon" viewBox="0 0 24 24" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15,3 21,3 21,9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    Resources & Assets
+                </h2>
+                <ul class="sitemap-links">
+                    <li>
+                        <a href="assets/images/logo.png">
+                            → Company Logo
+                        </a>
+                        <div class="page-description">Ryzup Marketing brand logo</div>
+                    </li>
+                    <li>
+                        <a href="assets/catalog/">
+                            → Portfolio Gallery
+                        </a>
+                        <div class="page-description">Image and video portfolio assets</div>
+                    </li>
+                    <li>
+                        <a href="css/styles.css">
+                            → Website Styles
+                        </a>
+                        <div class="page-description">CSS styling for the website</div>
+                    </li>
+                    <li>
+                        <a href="js/main.js">
+                            → JavaScript Features
+                        </a>
+                        <div class="page-description">Interactive website functionality</div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="sitemap-section">
+                <h2 class="section-title">
+                    <svg class="section-icon" viewBox="0 0 24 24" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Contact Information
+                </h2>
+                <ul class="sitemap-links">
+                    <li>
+                        <a href="mailto:info@ryzupmarketing.com">
+                            → Email Us
+                        </a>
+                        <div class="page-description">info@ryzupmarketing.com</div>
+                    </li>
+                    <li>
+                        <a href="tel:+971508765323">
+                            → Call Us
+                        </a>
+                        <div class="page-description">+971 50 876 5323</div>
+                    </li>
+                    <li>
+                        <a href="index.html#contact">
+                            → Office Location
+                        </a>
+                        <div class="page-description">Office No. 111, Liwa Business Centre, Abu Dhabi, UAE</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background: #f8f9fa; padding: 2rem; border-radius: 15px; text-align: center; margin-top: 3rem; border: 2px solid #F6C90E;">
+            <h3 style="margin: 0 0 1rem 0; font-weight: 700; color: #333; font-size: 1.2rem;">
+                Need help finding something?
+            </h3>
+            <p style="margin: 0 0 1.5rem 0; font-weight: 500; color: #666; font-size: 1.1rem;">
+                <span class="highlight">Contact our team</span> and we'll be happy to assist you!
+            </p>
+            <a href="index.html#contact" class="nav-btn" style="display: inline-block; margin-top: 0.5rem;">Get in Touch</a>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Simple hover effects for sitemap sections
+        document.querySelectorAll('.sitemap-section').forEach(section => {
+            section.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            section.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
